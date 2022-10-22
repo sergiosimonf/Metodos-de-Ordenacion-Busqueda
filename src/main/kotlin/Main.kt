@@ -1,3 +1,5 @@
+// package Resuelto
+
 /**
  * Elimina los comentarios para ver el contenido de cada array
  */
@@ -7,61 +9,61 @@ fun main() {
     var timeIni = 0L
     var timeFin = 0L
 
-    var timeBurbujaSuma: Long = 0L
+    var timeInsertionSuma: Long = 0L
 
     /**
-     * Ejecución de método de ordenación burbuja con un tamaño de 1.000 3 veces seguidas con array con datos independientes.
+     * Ejecución de método de ordenación Insertion con un tamaño de 1.000 3 veces seguidas con array con datos independientes.
      * Imprime lo que tarda en ordenarlo y además la media del tiempo de ejecución
      */
     for (i in 0 until 3) {
         var vectorInicio = IntArray(1_000) { (0..100_000).random() }
 //        println("Contenido vector sin ordenar: ${vectorInicio.contentToString()}")
-        val vectorBurbuja = vectorInicio
+        val vectorInsertion = vectorInicio
         timeIni = System.currentTimeMillis()
-        bubbleSort(vectorBurbuja)
+        insertionSort(vectorInsertion)
         timeFin = System.currentTimeMillis()
-//        println("Contenido vector burbuja: ${vectorBurbuja.contentToString()}")
-        println("Tiempo burbuja: ${timeFin - timeIni} ms")
-        timeBurbujaSuma += (timeFin - timeIni)
-        println("¿Está ordenado? ${vectorBurbuja.contentEquals(vectorInicio.sortedArray())}")
+//        println("Contenido vector Insertion: ${vectorInsertion.contentToString()}")
+        println("Tiempo Insertion: ${timeFin - timeIni} ms")
+        timeInsertionSuma += (timeFin - timeIni)
+        println("¿Está ordenado? ${vectorInsertion.contentEquals(vectorInicio.sortedArray())}")
     }
-    timeBurbujaSuma /= 3
-    println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño 1000")
+    timeInsertionSuma /= 3
+    println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño 1000")
 
     /**
      * Ejecutamos un nuevo array ("@vectorRepetido") el cual su tamaño va de 5.000 en 5.000 hasta llegar a 100.000
-     * Con @vectorBurbujaRepe hacemos la misma función que @vectorBurbuja
+     * Con @vectorInsertionRepe hacemos la misma función que @vectorInsertion
      */
     for (i in 0 until 20) {
         var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
         tamañoArray = tamañoArray + 5_000
-        val vectorBurbujaRepe = vectorRepetido
+        val vectorInsertionRepe = vectorRepetido
         for (i in 0 until 3) {
             var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
 //            println("Contenido vector sin ordenar: ${vectorRepetido.contentToString()}")
-            val vectorBurbujaRepe = vectorRepetido
+            val vectorInsertionRepe = vectorRepetido
             timeIni = System.currentTimeMillis()
-            bubbleSort(vectorBurbujaRepe)
+            insertionSort(vectorInsertionRepe)
             timeFin = System.currentTimeMillis()
-//            println("Contenido vector ordenado: ${vectorBurbujaRepe.contentToString()}")
-            println("Tiempo burbuja: ${timeFin - timeIni} ms")
-            println("¿Está ordenado? ${vectorBurbujaRepe.contentEquals(vectorRepetido.sortedArray())}")
-            timeBurbujaSuma += (timeFin - timeIni)
+//            println("Contenido vector ordenado: ${vectorInsertionRepe.contentToString()}")
+            println("Tiempo Insertion: ${timeFin - timeIni} ms")
+            println("¿Está ordenado? ${vectorInsertionRepe.contentEquals(vectorRepetido.sortedArray())}")
+            timeInsertionSuma += (timeFin - timeIni)
         }
-        timeBurbujaSuma /= 3
-        println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño $tamañoArray")
+        timeInsertionSuma /= 3
+        println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño $tamañoArray")
     }
 }
 
-//  Método de ordenación de burbuja O(n²)
-fun bubbleSort(vectorBurbuja: IntArray) {
-    for (i in 0 until vectorBurbuja.size - 1) {
-        for (j in 0 until vectorBurbuja.size - 1 - i) {
-            if (vectorBurbuja[j] > vectorBurbuja[j + 1]) {
-                val aux = vectorBurbuja[j]
-                vectorBurbuja[j] = vectorBurbuja[j + 1]
-                vectorBurbuja[j + 1] = aux
-            }
+//  Método de ordenación por inserción O(n²)
+fun insertionSort(array: IntArray) {
+    for (i in 1 until array.size) {
+        var j = i
+        while (j > 0 && array[j] < array[j - 1]) {
+            val aux = array[j]
+            array[j] = array[j - 1]
+            array[j - 1] = aux
+            j--
         }
     }
 }

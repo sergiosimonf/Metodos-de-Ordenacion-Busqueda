@@ -1,46 +1,57 @@
-package Resuelto
+ package Resuelto
 
+/**
+ * Elimina los comentarios para ver el contenido de cada array
+ */
 fun main() {
-    var vectorInicio = IntArray(1_000) { (0..100000).random() }
-    var tamañoArray = 5_000
+    var tamañoArray = 0
 
     var timeIni = 0L
     var timeFin = 0L
 
-    var timeseletionSuma: Long = 0L
+    var timeInsertionSuma: Long = 0L
 
     /**
-     * Ejecución de método de ordenación selección con un tamaño de 1.000 3 veces seguidas
+     * Ejecución de método de ordenación Insertion con un tamaño de 1.000 3 veces seguidas con array con datos independientes.
      * Imprime lo que tarda en ordenarlo y además la media del tiempo de ejecución
      */
     for (i in 0 until 3) {
-        val vectorseletion = insertionSort(vectorInicio)
+        var vectorInicio = IntArray(1_000) { (0..100_000).random() }
+//        println("Contenido vector sin ordenar: ${vectorInicio.contentToString()}")
+        val vectorInsertion = vectorInicio
         timeIni = System.currentTimeMillis()
-        insertionSort(vectorInicio)
+        insertionSort(vectorInsertion)
         timeFin = System.currentTimeMillis()
-        println("Tiempo seletion: ${timeFin - timeIni} ms")
-        timeseletionSuma += (timeFin - timeIni)
+//        println("Contenido vector Insertion: ${vectorInsertion.contentToString()}")
+        println("Tiempo Insertion: ${timeFin - timeIni} ms")
+        timeInsertionSuma += (timeFin - timeIni)
+        println("¿Está ordenado? ${vectorInsertion.contentEquals(vectorInicio.sortedArray())}")
     }
-    timeseletionSuma /= 3
-    println("Tiempo medio de insertion es: $timeseletionSuma ms tamaño 1000")
+    timeInsertionSuma /= 3
+    println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño 1000")
 
     /**
-     * Ejecución de método de ordenación selección con un tamaño de 5.000 a 100.000 3 veces seguidas
-     * Imprime lo que tarda en ordenarlo y además la media del tiempo de ejecución
+     * Ejecutamos un nuevo array ("@vectorRepetido") el cual su tamaño va de 5.000 en 5.000 hasta llegar a 100.000
+     * Con @vectorInsertionRepe hacemos la misma función que @vectorInsertion
      */
-    for (i in 1 until 20) {
+    for (i in 0 until 20) {
+        var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
         tamañoArray = tamañoArray + 5_000
-        var vectorInicio = IntArray(tamañoArray) { (0..100000).random() }
+        val vectorInsertionRepe = vectorRepetido
         for (i in 0 until 3) {
-            val vectorseletion = insertionSort(vectorInicio)
+            var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
+//            println("Contenido vector sin ordenar: ${vectorRepetido.contentToString()}")
+            val vectorInsertionRepe = vectorRepetido
             timeIni = System.currentTimeMillis()
-            insertionSort(vectorInicio)
+            insertionSort(vectorInsertionRepe)
             timeFin = System.currentTimeMillis()
-            println("Tiempo seletion: ${timeFin - timeIni} ms")
-            timeseletionSuma += (timeFin - timeIni)
+//            println("Contenido vector ordenado: ${vectorInsertionRepe.contentToString()}")
+            println("Tiempo Insertion: ${timeFin - timeIni} ms")
+            println("¿Está ordenado? ${vectorInsertionRepe.contentEquals(vectorRepetido.sortedArray())}")
+            timeInsertionSuma += (timeFin - timeIni)
         }
-        timeseletionSuma /= 3
-        println("Tiempo medio de insertion es: $timeseletionSuma ms tamaño $tamañoArray")
+        timeInsertionSuma /= 3
+        println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño $tamañoArray")
     }
 }
 
