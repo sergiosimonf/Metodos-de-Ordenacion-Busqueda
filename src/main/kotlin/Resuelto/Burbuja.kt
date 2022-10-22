@@ -13,14 +13,13 @@ fun main() {
      * Ejecución de método de ordenación burbuja con un tamaño de 1.000 3 veces seguidas
      * Imprime lo que tarda en ordenarlo y ademas la media del tiempo de ejecución 
      */
-    for (i in 1 until 4) {
+    for (i in 0 until 3) {
         val vectorBurbuja = bubbleSort(vectorInicio)
         timeIni = System.currentTimeMillis()
         bubbleSort(vectorInicio)
         timeFin = System.currentTimeMillis()
         println("Tiempo burbuja: ${timeFin - timeIni} ms")
         timeBurbujaSuma += (timeFin - timeIni)
-        i + 1
     }
     timeBurbujaSuma /= 3
     println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño 1000")
@@ -32,14 +31,13 @@ fun main() {
     for (i in 1 until 20) {
         tamañoArray = tamañoArray + 5_000
         var vectorInicio = IntArray(tamañoArray) { (0..100000).random() }
-        for (i in 1 until 4) {
+        for (i in 0 until 3) {
             val vectorBurbuja = bubbleSort(vectorInicio)
             timeIni = System.currentTimeMillis()
             bubbleSort(vectorInicio)
             timeFin = System.currentTimeMillis()
             println("Tiempo burbuja: ${timeFin - timeIni} ms")
             timeBurbujaSuma += (timeFin - timeIni)
-            i + 1
         }
         timeBurbujaSuma /= 3
         println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño $tamañoArray")
