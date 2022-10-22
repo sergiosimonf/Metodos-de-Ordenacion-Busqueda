@@ -11,7 +11,7 @@ fun main() {
 
     /**
      * Ejecución de método de ordenación selección con un tamaño de 1.000 3 veces seguidas
-     * Imprime lo que tarda en ordenarlo y ademas la media del tiempo de ejecución
+     * Imprime lo que tarda en ordenarlo y además la media del tiempo de ejecución
      */
     for (i in 0 until 3) {
         val vectorseletion = selectionSort(vectorInicio)

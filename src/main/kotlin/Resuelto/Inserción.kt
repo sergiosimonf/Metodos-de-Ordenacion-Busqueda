@@ -11,7 +11,7 @@ fun main() {
 
     /**
      * Ejecución de método de ordenación selección con un tamaño de 1.000 3 veces seguidas
-     * Imprime lo que tarda en ordenarlo y ademas la media del tiempo de ejecución
+     * Imprime lo que tarda en ordenarlo y además la media del tiempo de ejecución
      */
     for (i in 0 until 3) {
         val vectorseletion = insertionSort(vectorInicio)
@@ -22,7 +22,7 @@ fun main() {
         timeseletionSuma += (timeFin - timeIni)
     }
     timeseletionSuma /= 3
-    println("Tiempo medio de seletion es: $timeseletionSuma ms tamaño 1000")
+    println("Tiempo medio de insertion es: $timeseletionSuma ms tamaño 1000")
 
     /**
      * Ejecución de método de ordenación selección con un tamaño de 5.000 a 100.000 3 veces seguidas
@@ -40,7 +40,7 @@ fun main() {
             timeseletionSuma += (timeFin - timeIni)
         }
         timeseletionSuma /= 3
-        println("Tiempo medio de seletion es: $timeseletionSuma ms tamaño $tamañoArray")
+        println("Tiempo medio de insertion es: $timeseletionSuma ms tamaño $tamañoArray")
     }
 }
 
