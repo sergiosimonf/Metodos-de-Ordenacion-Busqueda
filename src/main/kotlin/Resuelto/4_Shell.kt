@@ -1,4 +1,4 @@
-// package Resuelto
+package Resuelto
 
 /**
  * Elimina los comentarios para ver el contenido de cada array
