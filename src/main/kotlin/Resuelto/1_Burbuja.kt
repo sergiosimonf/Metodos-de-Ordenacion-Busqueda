@@ -8,6 +8,7 @@ fun main() {
     var timeIni = 0L
     var timeFin = 0L
 
+    var timeBurbuja: Long = 0L
     var timeBurbujaSuma: Long = 0L
 
     /**
@@ -21,13 +22,15 @@ fun main() {
         timeIni = System.currentTimeMillis()
         bubbleSort(vectorBurbuja)
         timeFin = System.currentTimeMillis()
+        timeBurbuja = timeFin - timeIni
 //        println("Contenido vector burbuja: ${vectorBurbuja.contentToString()}")
-        println("Tiempo burbuja: ${timeFin - timeIni} ms")
-        timeBurbujaSuma += (timeFin - timeIni)
+        println("Tiempo burbuja: $timeBurbuja ms")
+        timeBurbujaSuma += timeBurbuja
         println("¿Está ordenado? ${vectorBurbuja.contentEquals(vectorInicio.sortedArray())}")
     }
     timeBurbujaSuma /= 3
     println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño 1000")
+    timeBurbujaSuma = 0
 
     /**
      * Ejecutamos un nuevo array ("@vectorRepetido") el cual su tamaño va de 5.000 en 5.000 hasta llegar a 100.000
@@ -44,13 +47,15 @@ fun main() {
             timeIni = System.currentTimeMillis()
             bubbleSort(vectorBurbujaRepe)
             timeFin = System.currentTimeMillis()
+            timeBurbuja = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorBurbujaRepe.contentToString()}")
-            println("Tiempo burbuja: ${timeFin - timeIni} ms")
+            println("Tiempo burbuja: $timeBurbuja ms")
+            timeBurbujaSuma += timeBurbuja
             println("¿Está ordenado? ${vectorBurbujaRepe.contentEquals(vectorRepetido.sortedArray())}")
-            timeBurbujaSuma += (timeFin - timeIni)
         }
         timeBurbujaSuma /= 3
         println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño $tamañoArray")
+        timeBurbujaSuma = 0
     }
 }
 

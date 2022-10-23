@@ -9,6 +9,7 @@ fun main() {
     var timeIni = 0L
     var timeFin = 0L
 
+    var timeSeletion: Long = 0L
     var timeSeletionSuma: Long = 0L
 
     /**
@@ -22,13 +23,15 @@ fun main() {
         timeIni = System.currentTimeMillis()
         selectionSort(vectorSeletion)
         timeFin = System.currentTimeMillis()
+        timeSeletion = timeFin - timeIni
 //        println("Contenido vector Seletion: ${vectorSeletion.contentToString()}")
-        println("Tiempo Seletion: ${timeFin - timeIni} ms")
-        timeSeletionSuma += (timeFin - timeIni)
+        println("Tiempo Seletion: $timeSeletion ms")
+        timeSeletionSuma += timeSeletion
         println("¿Está ordenado? ${vectorSeletion.contentEquals(vectorInicio.sortedArray())}")
     }
     timeSeletionSuma /= 3
     println("Tiempo medio de Seletion es: $timeSeletionSuma ms tamaño 1000")
+    timeSeletionSuma = 0
 
     /**
      * Ejecutamos un nuevo array ("@vectorRepetido") el cual su tamaño va de 5.000 en 5.000 hasta llegar a 100.000
@@ -45,13 +48,15 @@ fun main() {
             timeIni = System.currentTimeMillis()
             selectionSort(vectorSeletionRepe)
             timeFin = System.currentTimeMillis()
+            timeSeletion = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorSeletionRepe.contentToString()}")
-            println("Tiempo Seletion: ${timeFin - timeIni} ms")
+            println("Tiempo Seletion: $timeSeletion ms")
+            timeSeletionSuma += timeSeletion
             println("¿Está ordenado? ${vectorSeletionRepe.contentEquals(vectorRepetido.sortedArray())}")
-            timeSeletionSuma += (timeFin - timeIni)
         }
         timeSeletionSuma /= 3
         println("Tiempo medio de Seletion es: $timeSeletionSuma ms tamaño $tamañoArray")
+        timeSeletionSuma = 0
     }
 }
 

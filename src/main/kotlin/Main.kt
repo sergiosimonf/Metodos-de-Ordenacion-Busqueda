@@ -9,6 +9,7 @@ fun main() {
     var timeIni = 0L
     var timeFin = 0L
 
+    var timeInsertion: Long = 0L
     var timeInsertionSuma: Long = 0L
 
     /**
@@ -22,13 +23,15 @@ fun main() {
         timeIni = System.currentTimeMillis()
         insertionSort(vectorInsertion)
         timeFin = System.currentTimeMillis()
+        timeInsertion = timeFin - timeIni
 //        println("Contenido vector Insertion: ${vectorInsertion.contentToString()}")
-        println("Tiempo Insertion: ${timeFin - timeIni} ms")
-        timeInsertionSuma += (timeFin - timeIni)
+        println("Tiempo Insertion: $timeInsertion ms")
+        timeInsertionSuma += timeInsertion
         println("¿Está ordenado? ${vectorInsertion.contentEquals(vectorInicio.sortedArray())}")
     }
     timeInsertionSuma /= 3
     println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño 1000")
+    timeInsertionSuma = 0
 
     /**
      * Ejecutamos un nuevo array ("@vectorRepetido") el cual su tamaño va de 5.000 en 5.000 hasta llegar a 100.000
@@ -45,13 +48,15 @@ fun main() {
             timeIni = System.currentTimeMillis()
             insertionSort(vectorInsertionRepe)
             timeFin = System.currentTimeMillis()
+            timeInsertion = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorInsertionRepe.contentToString()}")
-            println("Tiempo Insertion: ${timeFin - timeIni} ms")
+            println("Tiempo Insertion: $timeInsertion ms")
+            timeInsertionSuma += timeInsertion
             println("¿Está ordenado? ${vectorInsertionRepe.contentEquals(vectorRepetido.sortedArray())}")
-            timeInsertionSuma += (timeFin - timeIni)
         }
         timeInsertionSuma /= 3
         println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño $tamañoArray")
+        timeInsertionSuma = 0
     }
 }
 
