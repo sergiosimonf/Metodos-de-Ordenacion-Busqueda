@@ -1,7 +1,7 @@
-package Resuelto
+package Resuelto.Ordenacion
 
 /**
- * Elimina los comentarios para ver el contenido de cada array
+ * Elimina los comentarios para demostrar que el contenido está ordenado
  */
 fun main() {
     var tamañoArray = 0
@@ -20,17 +20,17 @@ fun main() {
         var vectorInicio = IntArray(1_000) { (0..100_000).random() }
 //        println("Contenido vector sin ordenar: ${vectorInicio.contentToString()}")
         val vectorSeletion = vectorInicio
-        timeIni = System.currentTimeMillis()
+        timeIni = System.nanoTime()
         selectionSort(vectorSeletion)
-        timeFin = System.currentTimeMillis()
+        timeFin = System.nanoTime()
         timeSeletion = timeFin - timeIni
 //        println("Contenido vector Seletion: ${vectorSeletion.contentToString()}")
-        println("Tiempo Seletion: $timeSeletion ms")
+        println("Tiempo Seletion: $timeSeletion ns")
         timeSeletionSuma += timeSeletion
-        println("¿Está ordenado? ${vectorSeletion.contentEquals(vectorInicio.sortedArray())}")
+//        println("¿Está ordenado? ${vectorSeletion.contentEquals(vectorInicio.sortedArray())}")
     }
     timeSeletionSuma /= 3
-    println("Tiempo medio de Seletion es: $timeSeletionSuma ms tamaño 1000")
+    println("Tiempo medio de Seletion es: $timeSeletionSuma ns tamaño 1000")
     timeSeletionSuma = 0
 
     /**
@@ -38,24 +38,22 @@ fun main() {
      * Con @vectorSeletionRepe hacemos la misma función que @vectorSeletion
      */
     for (i in 0 until 20) {
-        var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
-        tamañoArray = tamañoArray + 5_000
-        val vectorSeletionRepe = vectorRepetido
+        tamañoArray += 5_000
         for (i in 0 until 3) {
             var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
 //            println("Contenido vector sin ordenar: ${vectorRepetido.contentToString()}")
             val vectorSeletionRepe = vectorRepetido
-            timeIni = System.currentTimeMillis()
+            timeIni = System.nanoTime()
             selectionSort(vectorSeletionRepe)
-            timeFin = System.currentTimeMillis()
+            timeFin = System.nanoTime()
             timeSeletion = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorSeletionRepe.contentToString()}")
-            println("Tiempo Seletion: $timeSeletion ms")
+            println("Tiempo Seletion: $timeSeletion ns")
             timeSeletionSuma += timeSeletion
-            println("¿Está ordenado? ${vectorSeletionRepe.contentEquals(vectorRepetido.sortedArray())}")
+//            println("¿Está ordenado? ${vectorSeletionRepe.contentEquals(vectorRepetido.sortedArray())}")
         }
         timeSeletionSuma /= 3
-        println("Tiempo medio de Seletion es: $timeSeletionSuma ms tamaño $tamañoArray")
+        println("Tiempo medio de Seletion es: $timeSeletionSuma ns tamaño $tamañoArray")
         timeSeletionSuma = 0
     }
 }

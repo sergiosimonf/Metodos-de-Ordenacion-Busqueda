@@ -1,6 +1,7 @@
-package Resuelto
+package Resuelto.Ordenacion
+
 /**
- * Elimina los comentarios para ver el contenido de cada array
+ * Elimina los comentarios para demostrar que el contenido está ordenado
  */
 fun main() {
     var tamañoArray = 0
@@ -19,17 +20,17 @@ fun main() {
         var vectorInicio = IntArray(1_000) { (0..100_000).random() }
 //        println("Contenido vector sin ordenar: ${vectorInicio.contentToString()}")
         val vectorBurbuja = vectorInicio
-        timeIni = System.currentTimeMillis()
+        timeIni = System.nanoTime()
         bubbleSort(vectorBurbuja)
-        timeFin = System.currentTimeMillis()
+        timeFin = System.nanoTime()
         timeBurbuja = timeFin - timeIni
 //        println("Contenido vector burbuja: ${vectorBurbuja.contentToString()}")
-        println("Tiempo burbuja: $timeBurbuja ms")
+        println("Tiempo burbuja: $timeBurbuja ns")
         timeBurbujaSuma += timeBurbuja
-        println("¿Está ordenado? ${vectorBurbuja.contentEquals(vectorInicio.sortedArray())}")
+//        println("¿Está ordenado? ${vectorBurbuja.contentEquals(vectorInicio.sortedArray())}")
     }
     timeBurbujaSuma /= 3
-    println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño 1000")
+    println("Tiempo medio de burbuja es: $timeBurbujaSuma ns tamaño 1000")
     timeBurbujaSuma = 0
 
     /**
@@ -37,24 +38,22 @@ fun main() {
      * Con @vectorBurbujaRepe hacemos la misma función que @vectorBurbuja
      */
     for (i in 0 until 20) {
-        var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
-        tamañoArray = tamañoArray + 5_000
-        val vectorBurbujaRepe = vectorRepetido
+        tamañoArray += 5_000
         for (i in 0 until 3) {
             var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
 //            println("Contenido vector sin ordenar: ${vectorRepetido.contentToString()}")
             val vectorBurbujaRepe = vectorRepetido
-            timeIni = System.currentTimeMillis()
+            timeIni = System.nanoTime()
             bubbleSort(vectorBurbujaRepe)
-            timeFin = System.currentTimeMillis()
+            timeFin = System.nanoTime()
             timeBurbuja = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorBurbujaRepe.contentToString()}")
-            println("Tiempo burbuja: $timeBurbuja ms")
+            println("Tiempo burbuja: $timeBurbuja ns")
             timeBurbujaSuma += timeBurbuja
-            println("¿Está ordenado? ${vectorBurbujaRepe.contentEquals(vectorRepetido.sortedArray())}")
+//            println("¿Está ordenado? ${vectorBurbujaRepe.contentEquals(vectorRepetido.sortedArray())}")
         }
         timeBurbujaSuma /= 3
-        println("Tiempo medio de burbuja es: $timeBurbujaSuma ms tamaño $tamañoArray")
+        println("Tiempo medio de burbuja es: $timeBurbujaSuma ns tamaño $tamañoArray")
         timeBurbujaSuma = 0
     }
 }

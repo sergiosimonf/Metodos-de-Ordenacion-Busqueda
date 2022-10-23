@@ -1,7 +1,7 @@
-package Resuelto
+package Resuelto.Ordenacion
 
 /**
- * Elimina los comentarios para ver el contenido de cada array
+ * Elimina los comentarios para demostrar que el contenido está ordenado
  */
 fun main() {
     var tamañoArray = 0
@@ -20,17 +20,17 @@ fun main() {
         var vectorInicio = IntArray(1_000) { (0..100_000).random() }
 //        println("Contenido vector sin ordenar: ${vectorInicio.contentToString()}")
         val vectorshell = vectorInicio
-        timeIni = System.currentTimeMillis()
+        timeIni = System.nanoTime()
         shellSort(vectorshell)
-        timeFin = System.currentTimeMillis()
+        timeFin = System.nanoTime()
         timeshell = timeFin - timeIni
 //        println("Contenido vector shell: ${vectorshell.contentToString()}")
-        println("Tiempo shell: $timeshell ms")
+        println("Tiempo shell: $timeshell ns")
         timeshellSuma += timeshell
-        println("¿Está ordenado? ${vectorshell.contentEquals(vectorInicio.sortedArray())}")
+//        println("¿Está ordenado? ${vectorshell.contentEquals(vectorInicio.sortedArray())}")
     }
     timeshellSuma /= 3
-    println("Tiempo medio de shell es: $timeshellSuma ms tamaño 1000")
+    println("Tiempo medio de shell es: $timeshellSuma ns tamaño 1000")
     timeshellSuma = 0
 
     /**
@@ -38,24 +38,22 @@ fun main() {
      * Con @vectorshellRepe hacemos la misma función que @vectorshell
      */
     for (i in 0 until 20) {
-        var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
-        tamañoArray = tamañoArray + 5_000
-        val vectorshellRepe = vectorRepetido
+        tamañoArray += 5_000
         for (i in 0 until 3) {
             var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
 //            println("Contenido vector sin ordenar: ${vectorRepetido.contentToString()}")
             val vectorshellRepe = vectorRepetido
-            timeIni = System.currentTimeMillis()
+            timeIni = System.nanoTime()
             shellSort(vectorshellRepe)
-            timeFin = System.currentTimeMillis()
+            timeFin = System.nanoTime()
             timeshell = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorshellRepe.contentToString()}")
-            println("Tiempo shell: $timeshell ms")
+            println("Tiempo shell: $timeshell ns")
             timeshellSuma += timeshell
-            println("¿Está ordenado? ${vectorshellRepe.contentEquals(vectorRepetido.sortedArray())}")
+//            println("¿Está ordenado? ${vectorshellRepe.contentEquals(vectorRepetido.sortedArray())}")
         }
         timeshellSuma /= 3
-        println("Tiempo medio de shell es: $timeshellSuma ms tamaño $tamañoArray")
+        println("Tiempo medio de shell es: $timeshellSuma ns tamaño $tamañoArray")
         timeshellSuma = 0
     }
 }

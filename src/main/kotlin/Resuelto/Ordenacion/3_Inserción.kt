@@ -1,7 +1,7 @@
-package Resuelto
+package Resuelto.Ordenacion
 
 /**
- * Elimina los comentarios para ver el contenido de cada array
+ * Elimina los comentarios para demostrar que el contenido está ordenado
  */
 fun main() {
     var tamañoArray = 0
@@ -20,17 +20,17 @@ fun main() {
         var vectorInicio = IntArray(1_000) { (0..100_000).random() }
 //        println("Contenido vector sin ordenar: ${vectorInicio.contentToString()}")
         val vectorInsertion = vectorInicio
-        timeIni = System.currentTimeMillis()
+        timeIni = System.nanoTime()
         insertionSort(vectorInsertion)
-        timeFin = System.currentTimeMillis()
+        timeFin = System.nanoTime()
         timeInsertion = timeFin - timeIni
 //        println("Contenido vector Insertion: ${vectorInsertion.contentToString()}")
-        println("Tiempo Insertion: $timeInsertion ms")
+        println("Tiempo Insertion: $timeInsertion ns")
         timeInsertionSuma += timeInsertion
-        println("¿Está ordenado? ${vectorInsertion.contentEquals(vectorInicio.sortedArray())}")
+//        println("¿Está ordenado? ${vectorInsertion.contentEquals(vectorInicio.sortedArray())}")
     }
     timeInsertionSuma /= 3
-    println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño 1000")
+    println("Tiempo medio de Insertion es: $timeInsertionSuma ns tamaño 1000")
     timeInsertionSuma = 0
 
     /**
@@ -38,24 +38,22 @@ fun main() {
      * Con @vectorInsertionRepe hacemos la misma función que @vectorInsertion
      */
     for (i in 0 until 20) {
-        var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
-        tamañoArray = tamañoArray + 5_000
-        val vectorInsertionRepe = vectorRepetido
+        tamañoArray += 5_000
         for (i in 0 until 3) {
             var vectorRepetido = IntArray(tamañoArray) { (0..100000).random() }
 //            println("Contenido vector sin ordenar: ${vectorRepetido.contentToString()}")
             val vectorInsertionRepe = vectorRepetido
-            timeIni = System.currentTimeMillis()
+            timeIni = System.nanoTime()
             insertionSort(vectorInsertionRepe)
-            timeFin = System.currentTimeMillis()
+            timeFin = System.nanoTime()
             timeInsertion = timeFin - timeIni
 //            println("Contenido vector ordenado: ${vectorInsertionRepe.contentToString()}")
-            println("Tiempo Insertion: $timeInsertion ms")
+            println("Tiempo Insertion: $timeInsertion ns")
             timeInsertionSuma += timeInsertion
-            println("¿Está ordenado? ${vectorInsertionRepe.contentEquals(vectorRepetido.sortedArray())}")
+//            println("¿Está ordenado? ${vectorInsertionRepe.contentEquals(vectorRepetido.sortedArray())}")
         }
         timeInsertionSuma /= 3
-        println("Tiempo medio de Insertion es: $timeInsertionSuma ms tamaño $tamañoArray")
+        println("Tiempo medio de Insertion es: $timeInsertionSuma ns tamaño $tamañoArray")
         timeInsertionSuma = 0
     }
 }
