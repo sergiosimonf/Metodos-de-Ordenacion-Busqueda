@@ -1,8 +1,5 @@
 package Resuelto.Busqueda
 
-/**
- * Elimina los comentarios para demostrar que el contenido está ordenado
- */
 fun main() {
     var tamañoArray = 0
 
@@ -15,7 +12,7 @@ fun main() {
     /**
      * Ejecución de método de búsqueda lineal o secuencial con un tamaño de 1.000 3 veces seguidas con array con datos independientes.
      * Imprime lo que tarda en ordenarlo y además la media del tiempo de ejecución
-     */
+     * */
     for (i in 0 until 3) {
         var vectorInicial = IntArray(1_000) { (0..100_000).random() }
         val elementoParaBuscar = vectorInicial.random()
@@ -30,9 +27,6 @@ fun main() {
     println("Tiempo medio de shell es: $timeLinealSuma ms tamaño 1000")
     timeLinealSuma = 0
 
-    /**
-     *
-     */
 
     for (i in 0 until 20) {
         tamañoArray += 5_000
