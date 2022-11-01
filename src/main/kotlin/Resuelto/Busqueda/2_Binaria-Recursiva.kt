@@ -56,18 +56,16 @@ fun main() {
  * Método de búsqueda binaria recursiva
  */
 
-fun binarySearch(array: IntArray, value: Int, left: Int, right: Int): Int {
-    if (left > right) {
+fun binarySearchRecursive(array: IntArray, elemento: Int, inf: Int, sup: Int): Int {
+    if (inf > sup) {
         return -1
     }
-    val middle = (left + right) / 2
-    return when {
-        array[middle] == value -> middle
-        array[middle] > value -> ordenacion.binarySearch(array, value, left, middle - 1)
-        else -> ordenacion.binarySearch(array, value, middle + 1, right)
+    val centro = (sup + inf) / 2
+    return if (array[centro] == elemento) {
+        centro
+    } else if (elemento < array[centro]) {
+        binarySearchRecursive(array, elemento, inf, centro - 1)
+    } else {
+        binarySearchRecursive(array, elemento, centro + 1, sup)
     }
-}
-
-fun binarySearch(array: IntArray, value: Int): Int {
-    return ordenacion.binarySearch(array, value, 0, array.size - 1)
 }
