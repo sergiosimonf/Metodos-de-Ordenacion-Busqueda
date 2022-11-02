@@ -27,7 +27,7 @@ fun main() {
         timeLinealSuma += timeBinario
     }
     timeLinealSuma /= 3
-    println("Tiempo medio de la búsqueda binaria es: $timeLinealSuma ms tamaño 1000")
+    println("Tiempo medio de la búsqueda binaria es: $timeLinealSuma ns tamaño 1000")
     timeLinealSuma = 0
 
     /**

@@ -24,7 +24,7 @@ fun main() {
         timeLinealSuma += timeLineal
     }
     timeLinealSuma /= 3
-    println("Tiempo medio de shell es: $timeLinealSuma ms tamaño 1000")
+    println("Tiempo medio de shell es: $timeLinealSuma ns tamaño 1000")
     timeLinealSuma = 0
 
 
