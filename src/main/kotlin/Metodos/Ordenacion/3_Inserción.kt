@@ -1,4 +1,4 @@
-package Resuelto.Ordenacion
+package Metodos.Ordenacion
 
 /**
  * Elimina los comentarios para demostrar que el contenido está ordenado

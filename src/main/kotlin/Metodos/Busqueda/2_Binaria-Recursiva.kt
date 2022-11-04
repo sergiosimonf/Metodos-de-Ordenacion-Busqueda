@@ -1,4 +1,4 @@
-package Resuelto.Busqueda
+package Metodos.Busqueda
 
 /**
  * Elimina los comentarios para demostrar que el contenido está ordenado

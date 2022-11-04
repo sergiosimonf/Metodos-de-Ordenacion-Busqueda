@@ -1,4 +1,4 @@
-package Resuelto.Busqueda
+package Metodos.Busqueda
 
 fun main() {
     var tamañoArray = 0
