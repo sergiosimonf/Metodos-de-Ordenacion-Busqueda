@@ -68,11 +68,11 @@ fun burbuja(array: IntArray) {
 
 El método **burbuja** escala de forma exponencial pero más exagerado en comparación a otros métodos como veremos más adelante. Este metodo solo es viable cuando tengamos que ordenar pocos datos.
 
-El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src\main\kotlin\Metodos\Ordenacion\1_Burbuja.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
+El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src/main/kotlin/Metodos/Ordenacion/1_Burbuja.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
 
 <div align="center"><img src="img/burbuja-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\burbujaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Ordenacion/Output/burbujaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Método selección
 
@@ -106,11 +106,11 @@ fun seleccion(array: IntArray) {
 
 El método de **selección** al igual que el burbuja cuanto más tenga que ordenar el tiempo se incrementa de forma exponencial aunque de forma mucho más eficiente. Es más rápido que el metodo burbuja pero sigue siendo inviable con arrays de gran tamaño
 
-El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src\main\kotlin\Metodos\Ordenacion\2_Selección.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
+El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src/main/kotlin/Metodos/Ordenacion/2_Selección.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
 
 <div align="center"><img src="img/selección-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\selecciónResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Ordenacion/Output/selecciónResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Método inserción
 
@@ -142,11 +142,11 @@ fun insercion(array: IntArray) {
 
 El método de **inserción** al igual que el burbuja y el de selección cuanto más tenga que ordenar el tiempo se incrementa de forma exponencial aunque de forma un poco más eficiente que el metodo de selección. Es un poco más rápido que el metodo selección pero sigue siendo inviable con arrays de gran tamaño
 
-El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src\main\kotlin\Metodos\Ordenacion\3_Inserción.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
+El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src/main/kotlin/Metodos/Ordenacion/3_Inserción.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
 
 <div align="center"><img src="img/inserción-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\inserciónResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Ordenacion/Output/inserciónResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Método shell
 
@@ -190,7 +190,7 @@ El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src
 
 <div align="center"><img src="img/shellsort-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\shellSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Ordenacion/Output/shellSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Método quicksort
 
@@ -251,7 +251,7 @@ El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src
 
 <div align="center"><img src="img/quicksort-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\quickSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Ordenacion/Output/quickSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Comparación de la eficiencia del los métodos de ordenación
 
@@ -308,7 +308,7 @@ El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src
 
 <div align="center"><img src="img/lineal-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\quickSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Ordenacion/Output/quickSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Método Binario
 
@@ -370,7 +370,7 @@ El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src
 
 <div align="center"><img src="img/binaria-iterativa-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](/src/main/kotlin/Metodos/Busqueda/Output/binariaIterativaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](/src/main/kotlin/Metodos/Busqueda/Output/binariaIterativaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 #### Versión recursiva
 
@@ -378,7 +378,7 @@ El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src
 
 <div align="center"><img src="img/binaria-recursiva-resul.png" aling="center"></div>
 
-Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Busqueda/Output/binariaRecursivaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Busqueda/Output/binariaRecursivaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src/main/kotlin/Metodos/Ordenacion/Output/Algoritmo_de_ordenación.ods)
 
 ## Comparación de la eficiencia del los métodos de búsqueda
 
