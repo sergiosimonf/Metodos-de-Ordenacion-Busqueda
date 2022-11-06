@@ -19,10 +19,13 @@
 - [Métodos de búsqueda](#métodos-de-búsqueda)
   - [Método secuencial o lineal](#método-secuencial-o-lineal)
     - [Algoritmo del metodo de búsqueda secuencial](#algoritmo-del-metodo-de-búsqueda-secuencial)
+    - [Eficiencia del metodo secuencial o lineal](#eficiencia-del-metodo-secuencial-o-lineal)
   - [Método Binario](#método-binario)
     - [Algoritmo del metodo de búsqueda binaria](#algoritmo-del-metodo-de-búsqueda-binaria)
-
-<!-- <div align="center"><img src="img/" aling="center"></div> -->
+    - [Eficiencia del método busqueda binaria](#eficiencia-del-método-busqueda-binaria)
+      - [Versión iterativa](#versión-iterativa)
+      - [Versión recursiva](#versión-recursiva)
+  - [Comparación de la eficiencia del los métodos de búsqueda](#comparación-de-la-eficiencia-del-los-métodos-de-búsqueda)
 
 # Métodos de ordenación y búsqueda
 
@@ -252,9 +255,23 @@ Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontra
 
 ## Comparación de la eficiencia del los métodos de ordenación
 
+El ranking de los algoritmos de búsqueda es el siguiente:
+
+1º QuickSort
+
+2º ShellSort
+
+3º Inserción
+
+4º Selección
+
+5º Burbuja
+
 <div align="center"><img src="img/comparacion-busqueda.png" aling="center"></div>
 
 <div align="center"><img src="img/comparacion-busqueda2.png" aling="center"></div>
+
+Se puede ver claramente la diferencias entre los algoritmos aunque el quickSortResultados y el shellSort tienen valores muy cercanos la diferencia entre los distintos algoritmos es considerablemente grande cuanto más datos tenemos que ordenar
 
 # Métodos de búsqueda
 
@@ -282,6 +299,16 @@ fun busquedaSecuencial(array: IntArray, elemento: Int): Int {
   return -1
 }
 ````
+
+### Eficiencia del metodo secuencial o lineal
+
+El método **secuencial o lineal** con tamaño pequeño es menos eficiente con un tamaño mayor. El tiempo que tarda en buscar el el carácter con el mismo tamaño no tiene valores similares entre las pruebas como sucedía con los de ordenación.
+
+El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src/main/kotlin/Metodos/Busqueda/1_Lineal.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
+
+<div align="center"><img src="img/lineal-resul.png" aling="center"></div>
+
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src\main\kotlin\Metodos\Ordenacion\Output\quickSortResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
 
 ## Método Binario
 
@@ -332,3 +359,29 @@ fun busquedaBinariaRecursiva(array: IntArray, elemento: Int, inf: Int, sup: Int)
   }
 }
 ````
+
+### Eficiencia del método busqueda binaria
+
+El metodo de **busqueda binaria iterativa y recursiva** tardan lo mismo o muy parecido a el metodo lineal y entre ellos aun que con un tamaño pequeño en el array ha tardado en la primera prueba más que el metodo lineal los datos son similares.
+
+#### Versión iterativa
+
+El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src/main/kotlin/Metodos/Busqueda/2_Binaria-Iterativa.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
+
+<div align="center"><img src="img/binaria-iterativa-resul.png" aling="center"></div>
+
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](/src/main/kotlin/Metodos/Busqueda/Output/binariaIterativaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+
+#### Versión recursiva
+
+El algoritmo de la siguiente gráfica lo podrás encontrar en este [archivo](src/main/kotlin/Metodos/Busqueda/2_Binaria-Recursiva.kt) los datos dependen de la máquina que los procese por lo que tus datos serán distintos a los míos pero la forma de la gráfica sera muy similar.
+
+<div align="center"><img src="img/binaria-recursiva-resul.png" aling="center"></div>
+
+Si quieres comprobar los resultados del algoritmo en mi máquina puedes encontrarlo en el siguiente [pdf](src/main/kotlin/Metodos/Busqueda/Output/binariaRecursivaResultados.pdf). La gráfica de la tabla la encontraras en esta [hoja de calculo](src\main\kotlin\Metodos\Ordenacion\Output\Algoritmo_de_ordenación.ods)
+
+## Comparación de la eficiencia del los métodos de búsqueda
+
+<div align="center"><img src="img/comparacion-ordenacion.png" aling="center"></div>
+
+Al calcular la media para saber que metodo de busqueda es más eficiente veremos que es el lineal con 66.469,65 ns seguido del binario iterativo con 88.361,35 ns y por último el metodo binario recursivo con 100.194,65. Esto es así porque el metodo binario con arrays pequeños tiene más picos puntuales que suben la media pero a partir del tamaño de 35000 ya todos tienen una media muy similar entre si.
